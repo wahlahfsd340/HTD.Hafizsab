@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Happy Teachers Day - a celebration for Sir Shamaz on 5 October.">
+    <title>Happy Teachers Day | Hafiza Mam </title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Montserrat:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== Animated background layers ===== -->
+    <div class="bg" aria-hidden="true">
+        <div class="bg__gradient"></div>
+        <div class="bg__glow bg__glow--purple"></div>
+        <div class="bg__glow bg__glow--teal"></div>
+        <div class="bg__glow bg__glow--cursor" id="cursorGlow"></div>
+        <div class="bg__beam bg__beam--1"></div>
+        <div class="bg__beam bg__beam--2"></div>
+        <div class="bg__beam bg__beam--3"></div>
+        <div class="bg__stars" id="stars"></div>
+        <div class="bg__particles" id="particles"></div>
+    </div>
+
+    <!-- Temporary page glow used by the Celebrate button -->
+    <div class="celebrate-glow" id="celebrateGlow" aria-hidden="true"></div>
+
+    <!-- Confetti is injected here by JavaScript -->
+    <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+
+    <!-- ===== Hero ===== -->
+    <header class="hero">
+
+        <!-- Floating decorative elements (moved slightly by mouse) -->
+        <div class="decor" aria-hidden="true">
+            <span class="decor__item decor__circle decor__circle--1" data-depth="18"></span>
+            <span class="decor__item decor__circle decor__circle--2" data-depth="26"></span>
+            <span class="decor__item decor__circle decor__circle--3" data-depth="14"></span>
+            <span class="decor__item decor__star decor__star--1" data-depth="30">&#10022;</span>
+            <span class="decor__item decor__star decor__star--2" data-depth="22">&#10022;</span>
+            <span class="decor__item decor__star decor__star--3" data-depth="36">&#10023;</span>
+            <span class="decor__item decor__sparkle decor__sparkle--1" data-depth="20">&#10024;</span>
+            <span class="decor__item decor__sparkle decor__sparkle--2" data-depth="28">&#10024;</span>
+        </div>
+
+        <!-- Teacher symbol: graduation cap (inline SVG) -->
+        <div class="hero__icon reveal" style="--delay: 0.6s" aria-hidden="true">
+            <svg viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" role="img">
+                <defs>
+                    <linearGradient id="capGold" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#ffe9a8"/>
+                        <stop offset="50%" stop-color="#f5c451"/>
+                        <stop offset="100%" stop-color="#c9922a"/>
+                    </linearGradient>
+                </defs>
+                <!-- cap base -->
+                <path d="M30 42 v22 c0 8 14 14 30 14 s30 -6 30 -14 v-22 l-30 14 z" fill="url(#capGold)" opacity="0.85"/>
+                <!-- board -->
+                <path d="M60 8 L112 32 L60 56 L8 32 Z" fill="url(#capGold)"/>
+                <path d="M60 8 L112 32 L60 56 L8 32 Z" fill="none" stroke="#fff6d6" stroke-width="1.2" opacity="0.6"/>
+                <!-- tassel -->
+                <path d="M104 35 v26" stroke="#f5c451" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="104" cy="64" r="4" fill="#f5c451"/>
+            </svg>
+        </div>
+
+        <!-- Main heading -->
+        <h1 class="hero__title reveal" style="--delay: 1s">
+            <span class="hero__title-inner">Happy Teachers Day</span>
+        </h1>
+
+        <!-- Teacher name -->
+        <h2 class="hero__name reveal" style="--delay: 1.9s">
+            <span class="hero__name-text">  Hafiza Mam</span>
+        </h2>
+
+        <!-- Date -->
+        <p class="hero__date reveal-date" style="--delay: 2.8s">
+            <span class="hero__date-text">5 October</span>
+            <span class="hero__date-line" aria-hidden="true"></span>
+        </p>
+
+        <!-- Celebrate button -->
+        <button class="btn reveal" id="celebrateBtn" type="button"
+                style="--delay: 4.6s"
+                aria-label="Celebrate Teachers Day with Sir Shamaz">
+            <span class="btn__label">Celebrate</span>
+            <span class="btn__shine" aria-hidden="true"></span>
+        </button>
+
+        <!-- Message shown after celebrating -->
+        <p class="toast" id="toast" role="status" aria-live="polite"></p>
+    </header>
+
+    <!-- ===== Appreciation ===== -->
+    <main>
+        <section class="appreciation" aria-labelledby="thanks-title">
+            <article class="glass-card reveal" id="glassCard" style="--delay: 3.8s">
+                <div class="glass-card__inner">
+                    <p class="glass-card__quote">
+                        Behind every successful student is a teacher who inspires, guides and believes.
+                        Thank you for sharing your knowledge, patience and wisdom. Your lessons go far
+                        beyond the classroom and leave a lasting impact.
+                    </p>
+                    <h3 class="glass-card__thanks" id="thanks-title">Thank You, Mam Hafiza !</h3>
+                </div>
+            </article>
+        </section>
+        <!-- ===== Photo gallery ===== -->
+        <section class="gallery" aria-labelledby="gallery-title">
+            <h3 class="gallery__title" id="gallery-title">Beautiful Memories</h3>
+            <p class="gallery__subtitle">Moments worth remembering</p>
+            <div class="gallery__grid">
+                <figure class="gallery__item" data-index="0" tabindex="0" role="button" aria-label="Open photo 1">
+                    <img src="pic/img (1).png" alt="Sir Shamaz standing among pine trees with misty mountains behind" loading="lazy">
+                </figure>
+                <figure class="gallery__item" data-index="1" tabindex="0" role="button" aria-label="Open photo 2">
+                    <img src="pic/img (2).png" alt="Sir Shamaz sitting on a rock, looking at the mountain view" loading="lazy">
+                </figure>
+                <figure class="gallery__item" data-index="2" tabindex="0" role="button" aria-label="Open photo 3">
+                    <img src="pic/img (3).png" alt="Sir Shamaz sitting on a rock in front of a waterfall" loading="lazy">
+                </figure>
+                <figure class="gallery__item" data-index="3" tabindex="0" role="button" aria-label="Open photo 4">
+                    <img src="pic/img (4).png" alt="Sir Shamaz by a waterfall surrounded by greenery" loading="lazy">
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <p>
+            <span class="footer__star" aria-hidden="true">&#9733;</span>
+            Made with respect and gratitude Mam Hafiza 
+            <span class="footer__star" aria-hidden="true">&#9733;</span>
+        </p>
+    </footer>
+
+    <!-- ===== Lightbox (photo viewer) ===== -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+        <button class="lightbox__btn lightbox__close" id="lbClose" type="button" aria-label="Close">&times;</button>
+        <button class="lightbox__btn lightbox__prev" id="lbPrev" type="button" aria-label="Previous photo">&#10094;</button>
+        <img class="lightbox__img" id="lbImg" src="" alt="">
+        <button class="lightbox__btn lightbox__next" id="lbNext" type="button" aria-label="Next photo">&#10095;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
